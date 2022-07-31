@@ -14,7 +14,9 @@ ${TARGET}: rnnoise
 	$(CC) -o ${TARGET} *.o -shared -Wl,--version-script=ladspa/export.txt -lm
 
 rnnoise:
+	mkdir rnnoise
+	mkdir c-ringbuf
 	git submodule update --init --recursive
 
 clean:
-	rm -rf *.o ${TARGET}
+	rm -rf *.o ladspa/*.o ${TARGET}
