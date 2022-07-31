@@ -15,6 +15,6 @@ ${TARGET}: rnnoise
 	$(CC) -o ${TARGET} *.o -shared -Wl,--version-script=ladspa/export.txt -lm
 
 clean:
-	rm -rf *.o ladspa/*.o rnnoise c-ringbuf ${TARGET}
+	rm -rf *.o ladspa/*.o ${TARGET}
 
 .PHONY: all rnnoise clean
